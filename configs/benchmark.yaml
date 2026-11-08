@@ -1,0 +1,12 @@
+retrieval_k: 5
+abstain_confidence: 0.34
+regression:
+  max_f1_drop: 0.02
+  max_groundedness_drop: 0.03
+labels:
+  - ACCOUNT_ACCESS
+  - AUTHORIZATION
+  - DATABASE
+  - NETWORK
+  - PAYMENTS
+  - INCIDENT

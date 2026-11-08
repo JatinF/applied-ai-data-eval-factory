@@ -1,0 +1,820 @@
+{
+  "adjudicated_count": 66,
+  "adjudication_examples": [
+    {
+      "adjudicated_label": "AUTHORIZATION",
+      "agreement": false,
+      "reason": "HTTP 401/403 outranks service metadata",
+      "reviewer_a": "AUTHORIZATION",
+      "reviewer_b": "ACCOUNT_ACCESS",
+      "sample_id": "ticket-0002"
+    },
+    {
+      "adjudicated_label": "AUTHORIZATION",
+      "agreement": false,
+      "reason": "HTTP 401/403 outranks service metadata",
+      "reviewer_a": "AUTHORIZATION",
+      "reviewer_b": "ACCOUNT_ACCESS",
+      "sample_id": "ticket-0008"
+    },
+    {
+      "adjudicated_label": "AUTHORIZATION",
+      "agreement": false,
+      "reason": "HTTP 401/403 outranks service metadata",
+      "reviewer_a": "AUTHORIZATION",
+      "reviewer_b": "ACCOUNT_ACCESS",
+      "sample_id": "ticket-0014"
+    },
+    {
+      "adjudicated_label": "AUTHORIZATION",
+      "agreement": false,
+      "reason": "HTTP 401/403 outranks service metadata",
+      "reviewer_a": "AUTHORIZATION",
+      "reviewer_b": "ACCOUNT_ACCESS",
+      "sample_id": "ticket-0020"
+    },
+    {
+      "adjudicated_label": "AUTHORIZATION",
+      "agreement": false,
+      "reason": "HTTP 401/403 outranks service metadata",
+      "reviewer_a": "AUTHORIZATION",
+      "reviewer_b": "ACCOUNT_ACCESS",
+      "sample_id": "ticket-0026"
+    }
+  ],
+  "agreement_rate": 0.6222222222222222,
+  "class_counts": {
+    "ACCOUNT_ACCESS": 38,
+    "AUTHORIZATION": 52,
+    "DATABASE": 52,
+    "INCIDENT": 44,
+    "NETWORK": 46,
+    "PAYMENTS": 38
+  },
+  "cohen_kappa": 0.6611076977091195,
+  "curation_notes": [
+    "Added 120 approved hard negatives.",
+    "Added labeling functions lf_db_error_code, lf_pay_error_code, and lf_auth_on_payments.",
+    "V2 prompt drops the unsupported restart sentence and ignores the glossary appendix.",
+    "V2 agent blocks credential reset unless the prediction is account access on the identity service.",
+    "V2 linear model skips context-free rows, keeps weak labels unless an error code overrides them, and adds approved synthetic rows.",
+    "Retrieval documents are unchanged between V1 and V2.",
+    "Reviewers are programmed policies, not external people."
+  ],
+  "dataset_sha256": "cd42095ec69e8077e5ea5c501c78bea2e3ec794fa2ae6ad0b53daf6a749c8787",
+  "disagreements_by_label": {
+    "ABSTAIN": 36,
+    "ACCOUNT_ACCESS": 10,
+    "AUTHORIZATION": 44,
+    "DATABASE": 10,
+    "PAYMENTS": 2
+  },
+  "document_count": 12,
+  "duplicate_rate": 0.165625,
+  "hosted_llm": "not-run",
+  "id_overlap": 0,
+  "label_model_backend": "local-probabilistic-v1",
+  "lora": "not-run",
+  "manifests": [
+    {
+      "dataset_sha256": "cd42095ec69e8077e5ea5c501c78bea2e3ec794fa2ae6ad0b53daf6a749c8787",
+      "difficulty_counts": {
+        "ambiguous": 17,
+        "easy": 28,
+        "multi-symptom": 1
+      },
+      "item_count": 46,
+      "notes": [
+        "Held-out test split."
+      ],
+      "slice_counts": {
+        "ambiguous-tickets": 3,
+        "authentication": 11,
+        "cross-domain": 8,
+        "database-incidents": 9,
+        "missing-context": 8,
+        "payments": 8
+      },
+      "task_counts": {
+        "agent": 46,
+        "classification": 46,
+        "reasoning": 45,
+        "retrieval": 46,
+        "robustness": 7
+      },
+      "version": "v1"
+    },
+    {
+      "dataset_sha256": "cd42095ec69e8077e5ea5c501c78bea2e3ec794fa2ae6ad0b53daf6a749c8787",
+      "difficulty_counts": {
+        "ambiguous": 17,
+        "easy": 28,
+        "multi-symptom": 1
+      },
+      "item_count": 46,
+      "notes": [
+        "Same test ids as v1. Training data changed; the scored set did not."
+      ],
+      "slice_counts": {
+        "ambiguous-tickets": 3,
+        "authentication": 11,
+        "cross-domain": 8,
+        "database-incidents": 9,
+        "missing-context": 8,
+        "payments": 8
+      },
+      "task_counts": {
+        "agent": 46,
+        "classification": 46,
+        "reasoning": 45,
+        "retrieval": 46,
+        "robustness": 7
+      },
+      "version": "v2"
+    }
+  ],
+  "max_train_test_jaccard": 1.0,
+  "mean_novelty": 0.4177243985604707,
+  "synthetic_accepted": 321,
+  "synthetic_by_strategy": {
+    "adversarial": 120,
+    "boundary": 120,
+    "contradictory_context": 120,
+    "hard_negative": 120,
+    "long_context": 120,
+    "missing_context": 120,
+    "paraphrase": 120,
+    "rare_case": 120
+  },
+  "synthetic_generated": 960,
+  "synthetic_rejected": 159,
+  "test_count": 46,
+  "ticket_count": 270,
+  "train_count": 175,
+  "v1": {
+    "failed_tickets": 9,
+    "failures": [
+      {
+        "count": 0,
+        "failure": "retrieval_miss",
+        "share": 0.0
+      },
+      {
+        "count": 1,
+        "failure": "classification_error",
+        "share": 0.1111111111111111
+      },
+      {
+        "count": 7,
+        "failure": "insufficient_context",
+        "share": 0.7777777777777778
+      },
+      {
+        "count": 0,
+        "failure": "reasoning_error",
+        "share": 0.0
+      },
+      {
+        "count": 1,
+        "failure": "tool_selection",
+        "share": 0.1111111111111111
+      },
+      {
+        "count": 0,
+        "failure": "other",
+        "share": 0.0
+      }
+    ],
+    "iteration": "v1",
+    "labeling": {
+      "backend": "local-probabilistic-v1",
+      "conflict": 0.3111111111111111,
+      "coverage": 1.0,
+      "labeling_functions": [
+        {
+          "abstention_rate": 0.8222222222222222,
+          "conflicts_with_others": 0.06666666666666667,
+          "coverage": 0.17777777777777778,
+          "estimated_accuracy": 0.75,
+          "gold_accuracy": 0.6666666666666666,
+          "name": "lf_password_reset",
+          "overlap_with_others": 0.17777777777777778,
+          "votes": 48
+        },
+        {
+          "abstention_rate": 0.8296296296296296,
+          "conflicts_with_others": 0.05925925925925926,
+          "coverage": 0.17037037037037037,
+          "estimated_accuracy": 0.6818181818181818,
+          "gold_accuracy": 1.0,
+          "name": "lf_error_401_403",
+          "overlap_with_others": 0.17037037037037037,
+          "votes": 46
+        },
+        {
+          "abstention_rate": 0.762962962962963,
+          "conflicts_with_others": 0.23703703703703705,
+          "coverage": 0.23703703703703705,
+          "estimated_accuracy": 0.7543859649122807,
+          "gold_accuracy": 0.71875,
+          "name": "lf_database_timeout",
+          "overlap_with_others": 0.23703703703703705,
+          "votes": 64
+        },
+        {
+          "abstention_rate": 0.8296296296296296,
+          "conflicts_with_others": 0.05925925925925926,
+          "coverage": 0.17037037037037037,
+          "estimated_accuracy": 0.6521739130434783,
+          "gold_accuracy": 0.6956521739130435,
+          "name": "lf_payments_service",
+          "overlap_with_others": 0.17037037037037037,
+          "votes": 46
+        },
+        {
+          "abstention_rate": 0.8518518518518519,
+          "conflicts_with_others": 0.037037037037037035,
+          "coverage": 0.14814814814814814,
+          "estimated_accuracy": 0.925,
+          "gold_accuracy": 0.95,
+          "name": "lf_priority_incident",
+          "overlap_with_others": 0.14814814814814814,
+          "votes": 40
+        },
+        {
+          "abstention_rate": 0.18518518518518523,
+          "conflicts_with_others": 0.25925925925925924,
+          "coverage": 0.8148148148148148,
+          "estimated_accuracy": 0.8767772511848341,
+          "gold_accuracy": 0.9181818181818182,
+          "name": "lf_runbook_match",
+          "overlap_with_others": 0.8148148148148148,
+          "votes": 220
+        },
+        {
+          "abstention_rate": 0.0,
+          "conflicts_with_others": 0.3111111111111111,
+          "coverage": 1.0,
+          "estimated_accuracy": 0.9181818181818182,
+          "gold_accuracy": 0.8481481481481481,
+          "name": "lf_similar_case",
+          "overlap_with_others": 0.8666666666666667,
+          "votes": 270
+        },
+        {
+          "abstention_rate": 0.37037037037037035,
+          "conflicts_with_others": 0.2962962962962963,
+          "coverage": 0.6296296296296297,
+          "estimated_accuracy": 0.8875,
+          "gold_accuracy": 0.9176470588235294,
+          "name": "lf_domain_dictionary",
+          "overlap_with_others": 0.6296296296296297,
+          "votes": 170
+        },
+        {
+          "abstention_rate": 0.8592592592592593,
+          "conflicts_with_others": 0.02962962962962963,
+          "coverage": 0.14074074074074075,
+          "estimated_accuracy": 0.97,
+          "gold_accuracy": 1.0,
+          "name": "lf_repeated_failures",
+          "overlap_with_others": 0.14074074074074075,
+          "votes": 38
+        },
+        {
+          "abstention_rate": 0.7851851851851852,
+          "conflicts_with_others": 0.1037037037037037,
+          "coverage": 0.21481481481481482,
+          "estimated_accuracy": 0.6666666666666666,
+          "gold_accuracy": 0.6896551724137931,
+          "name": "lf_network_terms",
+          "overlap_with_others": 0.21481481481481482,
+          "votes": 58
+        },
+        {
+          "abstention_rate": 0.8222222222222222,
+          "conflicts_with_others": 0.17777777777777778,
+          "coverage": 0.17777777777777778,
+          "estimated_accuracy": 0.51,
+          "gold_accuracy": 0.041666666666666664,
+          "name": "lf_timeout_to_network",
+          "overlap_with_others": 0.17777777777777778,
+          "votes": 48
+        },
+        {
+          "abstention_rate": 0.7703703703703704,
+          "conflicts_with_others": 0.11851851851851852,
+          "coverage": 0.22962962962962963,
+          "estimated_accuracy": 0.51,
+          "gold_accuracy": 0.5161290322580645,
+          "name": "lf_billing_keywords",
+          "overlap_with_others": 0.22962962962962963,
+          "votes": 62
+        },
+        {
+          "abstention_rate": 1.0,
+          "conflicts_with_others": 0.0,
+          "coverage": 0.0,
+          "estimated_accuracy": 0.7,
+          "gold_accuracy": null,
+          "name": "lf_insufficient_evidence",
+          "overlap_with_others": 0.0,
+          "votes": 0
+        }
+      ],
+      "lf_names": [
+        "lf_password_reset",
+        "lf_error_401_403",
+        "lf_database_timeout",
+        "lf_payments_service",
+        "lf_priority_incident",
+        "lf_runbook_match",
+        "lf_similar_case",
+        "lf_domain_dictionary",
+        "lf_repeated_failures",
+        "lf_network_terms",
+        "lf_timeout_to_network",
+        "lf_billing_keywords",
+        "lf_insufficient_evidence"
+      ],
+      "overlap": 0.8666666666666667,
+      "used_gold_to_fit": false
+    },
+    "scores": [
+      {
+        "abstention_rate": 0.0,
+        "accuracy": 0.8260869565217391,
+        "appropriate_abstention": 0.0,
+        "argument_correctness": null,
+        "citation_correctness": null,
+        "estimated_cost": null,
+        "f1_macro": 0.829573667073667,
+        "groundedness": null,
+        "iteration": "v1",
+        "mrr": null,
+        "name": "baseline_ml",
+        "ndcg_at_5": null,
+        "p50_ms": 0.015199999324977398,
+        "p95_ms": 0.023999949917197227,
+        "precision_macro": 0.8888888888888888,
+        "recall_at_5": null,
+        "recall_macro": 0.8433201058201059,
+        "task_completion": null,
+        "tokens": 0,
+        "tool_selection": null,
+        "unsafe_action_rate": null
+      },
+      {
+        "abstention_rate": 0.17391304347826086,
+        "accuracy": 0.7608695652173914,
+        "appropriate_abstention": 1.0,
+        "argument_correctness": null,
+        "citation_correctness": 0.8043478260869565,
+        "estimated_cost": null,
+        "f1_macro": 0.8318884818884819,
+        "groundedness": 0.5,
+        "iteration": "v1",
+        "mrr": 0.8565217391304347,
+        "name": "prompt_template",
+        "ndcg_at_5": 0.8576171457603727,
+        "p50_ms": 0.21460000425577164,
+        "p95_ms": 0.29199995333328843,
+        "precision_macro": 0.9212962962962963,
+        "recall_at_5": 0.9021739130434783,
+        "recall_macro": 0.7683201058201058,
+        "task_completion": null,
+        "tokens": 0,
+        "tool_selection": null,
+        "unsafe_action_rate": null
+      },
+      {
+        "abstention_rate": 0.0,
+        "accuracy": 0.8043478260869565,
+        "appropriate_abstention": 0.0,
+        "argument_correctness": null,
+        "citation_correctness": 0.8043478260869565,
+        "estimated_cost": null,
+        "f1_macro": 0.8078144078144079,
+        "groundedness": 1.0,
+        "iteration": "v1",
+        "mrr": 0.8565217391304347,
+        "name": "rag_extractive",
+        "ndcg_at_5": 0.8576171457603727,
+        "p50_ms": 0.21789997117593884,
+        "p95_ms": 0.298099999781698,
+        "precision_macro": 0.8606060606060607,
+        "recall_at_5": 0.9021739130434783,
+        "recall_macro": 0.8248015873015873,
+        "task_completion": null,
+        "tokens": 0,
+        "tool_selection": null,
+        "unsafe_action_rate": null
+      },
+      {
+        "abstention_rate": 0.0,
+        "accuracy": 0.8260869565217391,
+        "appropriate_abstention": 0.0,
+        "argument_correctness": 1.0,
+        "citation_correctness": null,
+        "estimated_cost": null,
+        "f1_macro": 0.829573667073667,
+        "groundedness": null,
+        "iteration": "v1",
+        "mrr": 0.8565217391304347,
+        "name": "unguarded_agent",
+        "ndcg_at_5": 0.8576171457603727,
+        "p50_ms": 0.23750000400468707,
+        "p95_ms": 0.25179999647662044,
+        "precision_macro": 0.8888888888888888,
+        "recall_at_5": 0.9021739130434783,
+        "recall_macro": 0.8433201058201059,
+        "task_completion": 0.8695652173913043,
+        "tokens": 0,
+        "tool_selection": 0.8695652173913043,
+        "unsafe_action_rate": 0.021739130434782608
+      }
+    ],
+    "slices": [
+      {
+        "accuracy": 0.7777777777777778,
+        "slice": "database-incidents",
+        "support": 9
+      },
+      {
+        "accuracy": 0.9090909090909091,
+        "slice": "authentication",
+        "support": 11
+      },
+      {
+        "accuracy": 0.75,
+        "slice": "payments",
+        "support": 8
+      },
+      {
+        "accuracy": 1.0,
+        "slice": "ambiguous-tickets",
+        "support": 3
+      },
+      {
+        "accuracy": 0.125,
+        "slice": "missing-context",
+        "support": 8
+      },
+      {
+        "accuracy": 1.0,
+        "slice": "cross-domain",
+        "support": 8
+      }
+    ]
+  },
+  "v2": {
+    "failed_tickets": 8,
+    "failures": [
+      {
+        "count": 0,
+        "failure": "retrieval_miss",
+        "share": 0.0
+      },
+      {
+        "count": 0,
+        "failure": "classification_error",
+        "share": 0.0
+      },
+      {
+        "count": 7,
+        "failure": "insufficient_context",
+        "share": 0.875
+      },
+      {
+        "count": 0,
+        "failure": "reasoning_error",
+        "share": 0.0
+      },
+      {
+        "count": 1,
+        "failure": "tool_selection",
+        "share": 0.125
+      },
+      {
+        "count": 0,
+        "failure": "other",
+        "share": 0.0
+      }
+    ],
+    "iteration": "v2",
+    "labeling": {
+      "backend": "local-probabilistic-v1",
+      "conflict": 0.3111111111111111,
+      "coverage": 1.0,
+      "labeling_functions": [
+        {
+          "abstention_rate": 0.8222222222222222,
+          "conflicts_with_others": 0.06666666666666667,
+          "coverage": 0.17777777777777778,
+          "estimated_accuracy": 0.6976744186046512,
+          "gold_accuracy": 0.6666666666666666,
+          "name": "lf_password_reset",
+          "overlap_with_others": 0.17777777777777778,
+          "votes": 48
+        },
+        {
+          "abstention_rate": 0.8296296296296296,
+          "conflicts_with_others": 0.05925925925925926,
+          "coverage": 0.17037037037037037,
+          "estimated_accuracy": 0.97,
+          "gold_accuracy": 1.0,
+          "name": "lf_error_401_403",
+          "overlap_with_others": 0.17037037037037037,
+          "votes": 46
+        },
+        {
+          "abstention_rate": 0.762962962962963,
+          "conflicts_with_others": 0.23703703703703705,
+          "coverage": 0.23703703703703705,
+          "estimated_accuracy": 0.7377049180327869,
+          "gold_accuracy": 0.71875,
+          "name": "lf_database_timeout",
+          "overlap_with_others": 0.23703703703703705,
+          "votes": 64
+        },
+        {
+          "abstention_rate": 0.8296296296296296,
+          "conflicts_with_others": 0.05925925925925926,
+          "coverage": 0.17037037037037037,
+          "estimated_accuracy": 0.6818181818181818,
+          "gold_accuracy": 0.6956521739130435,
+          "name": "lf_payments_service",
+          "overlap_with_others": 0.17037037037037037,
+          "votes": 46
+        },
+        {
+          "abstention_rate": 0.8518518518518519,
+          "conflicts_with_others": 0.037037037037037035,
+          "coverage": 0.14814814814814814,
+          "estimated_accuracy": 0.9487179487179487,
+          "gold_accuracy": 0.95,
+          "name": "lf_priority_incident",
+          "overlap_with_others": 0.14814814814814814,
+          "votes": 40
+        },
+        {
+          "abstention_rate": 0.18518518518518523,
+          "conflicts_with_others": 0.25925925925925924,
+          "coverage": 0.8148148148148148,
+          "estimated_accuracy": 0.9253731343283582,
+          "gold_accuracy": 0.9181818181818182,
+          "name": "lf_runbook_match",
+          "overlap_with_others": 0.8148148148148148,
+          "votes": 220
+        },
+        {
+          "abstention_rate": 0.0,
+          "conflicts_with_others": 0.3111111111111111,
+          "coverage": 1.0,
+          "estimated_accuracy": 0.97,
+          "gold_accuracy": 0.8481481481481481,
+          "name": "lf_similar_case",
+          "overlap_with_others": 0.8666666666666667,
+          "votes": 270
+        },
+        {
+          "abstention_rate": 0.37037037037037035,
+          "conflicts_with_others": 0.2962962962962963,
+          "coverage": 0.6296296296296297,
+          "estimated_accuracy": 0.9,
+          "gold_accuracy": 0.9176470588235294,
+          "name": "lf_domain_dictionary",
+          "overlap_with_others": 0.6296296296296297,
+          "votes": 170
+        },
+        {
+          "abstention_rate": 0.8592592592592593,
+          "conflicts_with_others": 0.02962962962962963,
+          "coverage": 0.14074074074074075,
+          "estimated_accuracy": 0.97,
+          "gold_accuracy": 1.0,
+          "name": "lf_repeated_failures",
+          "overlap_with_others": 0.14074074074074075,
+          "votes": 38
+        },
+        {
+          "abstention_rate": 0.7851851851851852,
+          "conflicts_with_others": 0.1037037037037037,
+          "coverage": 0.21481481481481482,
+          "estimated_accuracy": 0.6808510638297872,
+          "gold_accuracy": 0.6896551724137931,
+          "name": "lf_network_terms",
+          "overlap_with_others": 0.21481481481481482,
+          "votes": 58
+        },
+        {
+          "abstention_rate": 0.8222222222222222,
+          "conflicts_with_others": 0.17777777777777778,
+          "coverage": 0.17777777777777778,
+          "estimated_accuracy": 0.51,
+          "gold_accuracy": 0.041666666666666664,
+          "name": "lf_timeout_to_network",
+          "overlap_with_others": 0.17777777777777778,
+          "votes": 48
+        },
+        {
+          "abstention_rate": 0.7703703703703704,
+          "conflicts_with_others": 0.11851851851851852,
+          "coverage": 0.22962962962962963,
+          "estimated_accuracy": 0.5357142857142857,
+          "gold_accuracy": 0.5161290322580645,
+          "name": "lf_billing_keywords",
+          "overlap_with_others": 0.22962962962962963,
+          "votes": 62
+        },
+        {
+          "abstention_rate": 1.0,
+          "conflicts_with_others": 0.0,
+          "coverage": 0.0,
+          "estimated_accuracy": 0.7,
+          "gold_accuracy": null,
+          "name": "lf_insufficient_evidence",
+          "overlap_with_others": 0.0,
+          "votes": 0
+        },
+        {
+          "abstention_rate": 0.8296296296296296,
+          "conflicts_with_others": 0.17037037037037037,
+          "coverage": 0.17037037037037037,
+          "estimated_accuracy": 0.97,
+          "gold_accuracy": 1.0,
+          "name": "lf_db_error_code",
+          "overlap_with_others": 0.17037037037037037,
+          "votes": 46
+        },
+        {
+          "abstention_rate": 0.8814814814814815,
+          "conflicts_with_others": 0.007407407407407408,
+          "coverage": 0.11851851851851852,
+          "estimated_accuracy": 0.97,
+          "gold_accuracy": 1.0,
+          "name": "lf_pay_error_code",
+          "overlap_with_others": 0.11851851851851852,
+          "votes": 32
+        },
+        {
+          "abstention_rate": 0.9481481481481482,
+          "conflicts_with_others": 0.05185185185185185,
+          "coverage": 0.05185185185185185,
+          "estimated_accuracy": 0.7,
+          "gold_accuracy": 1.0,
+          "name": "lf_auth_on_payments",
+          "overlap_with_others": 0.05185185185185185,
+          "votes": 14
+        }
+      ],
+      "lf_names": [
+        "lf_password_reset",
+        "lf_error_401_403",
+        "lf_database_timeout",
+        "lf_payments_service",
+        "lf_priority_incident",
+        "lf_runbook_match",
+        "lf_similar_case",
+        "lf_domain_dictionary",
+        "lf_repeated_failures",
+        "lf_network_terms",
+        "lf_timeout_to_network",
+        "lf_billing_keywords",
+        "lf_insufficient_evidence",
+        "lf_db_error_code",
+        "lf_pay_error_code",
+        "lf_auth_on_payments"
+      ],
+      "overlap": 0.8666666666666667,
+      "used_gold_to_fit": false
+    },
+    "scores": [
+      {
+        "abstention_rate": 0.0,
+        "accuracy": 0.8478260869565217,
+        "appropriate_abstention": 0.0,
+        "argument_correctness": null,
+        "citation_correctness": null,
+        "estimated_cost": null,
+        "f1_macro": 0.845733328705465,
+        "groundedness": null,
+        "iteration": "v2",
+        "mrr": null,
+        "name": "linear_finetune",
+        "ndcg_at_5": null,
+        "p50_ms": 0.01580000389367342,
+        "p95_ms": 0.024099950678646564,
+        "precision_macro": 0.8679653679653679,
+        "recall_at_5": null,
+        "recall_macro": 0.8618386243386243,
+        "task_completion": null,
+        "tokens": 0,
+        "tool_selection": null,
+        "unsafe_action_rate": null
+      },
+      {
+        "abstention_rate": 0.17391304347826086,
+        "accuracy": 0.782608695652174,
+        "appropriate_abstention": 1.0,
+        "argument_correctness": null,
+        "citation_correctness": 0.8043478260869565,
+        "estimated_cost": null,
+        "f1_macro": 0.8604668723089776,
+        "groundedness": 1.0,
+        "iteration": "v2",
+        "mrr": 0.8565217391304347,
+        "name": "prompt_template",
+        "ndcg_at_5": 0.8576171457603727,
+        "p50_ms": 0.22629997693002224,
+        "p95_ms": 0.25509996339678764,
+        "precision_macro": 0.9666666666666667,
+        "recall_at_5": 0.9021739130434783,
+        "recall_macro": 0.7868386243386243,
+        "task_completion": null,
+        "tokens": 0,
+        "tool_selection": null,
+        "unsafe_action_rate": null
+      },
+      {
+        "abstention_rate": 0.0,
+        "accuracy": 0.8043478260869565,
+        "appropriate_abstention": 0.0,
+        "argument_correctness": null,
+        "citation_correctness": 0.8043478260869565,
+        "estimated_cost": null,
+        "f1_macro": 0.8078144078144079,
+        "groundedness": 1.0,
+        "iteration": "v2",
+        "mrr": 0.8565217391304347,
+        "name": "rag_extractive",
+        "ndcg_at_5": 0.8576171457603727,
+        "p50_ms": 0.22819999139755964,
+        "p95_ms": 0.2618000144138932,
+        "precision_macro": 0.8606060606060607,
+        "recall_at_5": 0.9021739130434783,
+        "recall_macro": 0.8248015873015873,
+        "task_completion": null,
+        "tokens": 0,
+        "tool_selection": null,
+        "unsafe_action_rate": null
+      },
+      {
+        "abstention_rate": 0.17391304347826086,
+        "accuracy": 0.8478260869565217,
+        "appropriate_abstention": 1.0,
+        "argument_correctness": 1.0,
+        "citation_correctness": null,
+        "estimated_cost": null,
+        "f1_macro": 0.845733328705465,
+        "groundedness": null,
+        "iteration": "v2",
+        "mrr": 0.8565217391304347,
+        "name": "guarded_agent",
+        "ndcg_at_5": 0.8576171457603727,
+        "p50_ms": 0.2378999488428235,
+        "p95_ms": 0.2531000063754618,
+        "precision_macro": 0.8679653679653679,
+        "recall_at_5": 0.9021739130434783,
+        "recall_macro": 0.8618386243386243,
+        "task_completion": 0.8260869565217391,
+        "tokens": 0,
+        "tool_selection": 0.8260869565217391,
+        "unsafe_action_rate": 0.0
+      }
+    ],
+    "slices": [
+      {
+        "accuracy": 0.8888888888888888,
+        "slice": "database-incidents",
+        "support": 9
+      },
+      {
+        "accuracy": 0.9090909090909091,
+        "slice": "authentication",
+        "support": 11
+      },
+      {
+        "accuracy": 0.75,
+        "slice": "payments",
+        "support": 8
+      },
+      {
+        "accuracy": 1.0,
+        "slice": "ambiguous-tickets",
+        "support": 3
+      },
+      {
+        "accuracy": 0.125,
+        "slice": "missing-context",
+        "support": 8
+      },
+      {
+        "accuracy": 1.0,
+        "slice": "cross-domain",
+        "support": 8
+      }
+    ]
+  },
+  "validation_count": 49
+}

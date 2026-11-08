@@ -1,0 +1,12 @@
+site_name: Applied AI Data Eval Factory
+site_description: Programmatic labeling, synthetic data, benchmarks, and measured refinement.
+docs_dir: docs
+nav:
+  - Architecture: architecture.md
+  - Dataset: dataset.md
+  - Evaluation: evaluation.md
+  - Failure taxonomy: failure-taxonomy.md
+  - Decisions:
+      - Weak supervision: decisions/ADR-001-weak-supervision.md
+      - Retrieval and training: decisions/ADR-002-rag-vs-finetune.md
+      - Evaluators: decisions/ADR-003-evaluator-design.md

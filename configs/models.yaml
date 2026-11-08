@@ -1,0 +1,12 @@
+approaches:
+  - baseline_ml
+  - prompt_template
+  - rag_extractive
+  - linear_finetune
+hosted_llm: not-run
+lora: not-run
+embedding_model: hashed-bow
+reason: >
+  This workstation run does not call a hosted model and does not train a
+  LoRA adapter. The prompt row is a local template. The refinement row is a
+  local linear model trained on adjudicated labels.

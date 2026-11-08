@@ -1,0 +1,28 @@
+{
+  "dataset_sha256": "cd42095ec69e8077e5ea5c501c78bea2e3ec794fa2ae6ad0b53daf6a749c8787",
+  "difficulty_counts": {
+    "ambiguous": 17,
+    "easy": 28,
+    "multi-symptom": 1
+  },
+  "item_count": 46,
+  "notes": [
+    "Same test ids as v1. Training data changed; the scored set did not."
+  ],
+  "slice_counts": {
+    "ambiguous-tickets": 3,
+    "authentication": 11,
+    "cross-domain": 8,
+    "database-incidents": 9,
+    "missing-context": 8,
+    "payments": 8
+  },
+  "task_counts": {
+    "agent": 46,
+    "classification": 46,
+    "reasoning": 45,
+    "retrieval": 46,
+    "robustness": 7
+  },
+  "version": "v2"
+}

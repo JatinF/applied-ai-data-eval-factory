@@ -1,0 +1,8 @@
+{
+  "sample_id": "ticket-393",
+  "reviewer_a": "DATABASE",
+  "reviewer_b": "NETWORK",
+  "agreement": false,
+  "adjudicated_label": "DATABASE",
+  "reason": "Database connection exhaustion caused downstream timeout"
+}
