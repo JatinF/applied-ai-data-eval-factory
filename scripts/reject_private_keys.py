@@ -14,17 +14,22 @@ SKIP = {
     ".pytest_cache",
     ".ruff_cache",
 }
+# Pieces stay split so this file does not contain a key header.
+_BEGIN = b"BEGIN "
 MARKERS = (
-    b"BEGIN PRIVATE KEY",
-    b"BEGIN RSA PRIVATE KEY",
-    b"BEGIN OPENSSH PRIVATE KEY",
+    _BEGIN + b"PRIVATE KEY",
+    _BEGIN + b"RSA PRIVATE KEY",
+    _BEGIN + b"OPENSSH PRIVATE KEY",
 )
 
 
 def main() -> None:
+    own = Path(__file__).resolve()
     bad: list[str] = []
     for path in Path(".").rglob("*"):
         if not path.is_file() or SKIP.intersection(path.parts):
+            continue
+        if path.resolve() == own:
             continue
         blob = path.read_bytes()
         if any(marker in blob for marker in MARKERS):
